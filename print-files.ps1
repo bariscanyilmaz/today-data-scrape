@@ -6,7 +6,7 @@ foreach ($file in $jsonFiles) {
     $content = Get-Content -Path $file.FullName -Raw
     
     # Eğer içerikte \n stringi varsa, dosya adını konsola yazdırır
-    if ($content -match "\\n") {
+    if ($content -match "\[\d+\]") {
         Write-Host $file.FullName
     }
 }
